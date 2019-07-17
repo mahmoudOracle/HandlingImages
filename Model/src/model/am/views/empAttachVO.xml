@@ -93,7 +93,8 @@
     PrecisionRule="true"
     EntityAttrName="Version"
     EntityUsage="EmployeeAttachmentsEO"
-    AliasName="VERSION"/>
+    AliasName="VERSION"
+    IsUpdateable="false"/>
   <ClientInterface
     Name="__clientInterface">
     <Method
@@ -150,4 +151,8 @@
       </ViewCriteriaRow>
     </ViewCriteria>
   </DeclarativeWhereClause>
+  <SortCriteria>
+    <Sort
+      Attribute="AttachmentType"/>
+  </SortCriteria>
 </ViewObject>

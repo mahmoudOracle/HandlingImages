@@ -30,7 +30,7 @@ public class ImageServletSameh extends HttpServlet {
 
     private Connection getConnection() throws Exception {
         Context ctx = new InitialContext();
-        DataSource ds = (DataSource) ctx.lookup("dipDS");
+        DataSource ds = (DataSource) ctx.lookup("hr0905DS");
         Connection conn = ds.getConnection();
         return conn;
     }

@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="empAttach2"
+  Name="empAttach3"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -13,22 +13,15 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   RowClass="model.shared.extensions.ExtViewRowImpl"
-  ComponentClass="model.am.views.empAttach2Impl"
+  ComponentClass="model.shared.extensions.ExtViewObjectImpl"
   FetchMode="FETCH_AS_NEEDED"
   PageIterMode="Full">
-  <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
-  </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.am.views.empAttach2_LABEL"/>
+        ResId="model.am.views.empAttach3_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <Variable
-    Name="emAttachIdParam"
-    Kind="viewcriteria"
-    Type="oracle.jbo.domain.Number"/>
   <EntityUsage
     Name="EmployeeAttachmentsEO"
     Entity="model.am.entities.EmployeeAttachmentsEO"/>
@@ -87,53 +80,13 @@
     AliasName="MODIFIED_ON"/>
   <ViewAttribute
     Name="Version"
+    IsUpdateable="false"
     PrecisionRule="true"
     EntityAttrName="Version"
     EntityUsage="EmployeeAttachmentsEO"
-    AliasName="VERSION"
-    IsUpdateable="false"/>
-  <ViewCriteria
-    Name="getAttachmentById"
-    ViewObjectName="model.am.views.empAttach2"
-    Conjunction="AND">
-    <Properties Name="_Props">
-      <CustomProperties>
-        <Property
-          Name="autoExecute"
-          Value="false"/>
-        <Property
-          Name="mode"
-          Value="Basic"/>
-        <Property
-          Name="allowConjunctionOverride"
-          Value="true"/>
-        <Property
-          Name="showInList"
-          Value="true"/>
-        <Property
-          Name="displayOperators"
-          Value="InAdvancedMode"/>
-      </CustomProperties>
-    </Properties>
-    <ViewCriteriaRow
-      Name="empAttach2Criteria_row_0"
-      UpperColumns="1">
-      <ViewCriteriaItem
-        Name="EmpAttachmentId"
-        ViewAttribute="EmpAttachmentId"
-        Operator="="
-        Conjunction="AND"
-        Value=":emAttachIdParam"
-        IsBindVarValue="true"
-        Required="Optional"/>
-    </ViewCriteriaRow>
-  </ViewCriteria>
+    AliasName="VERSION"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <SortCriteria>
-    <Sort
-      Attribute="AttachmentType"/>
-  </SortCriteria>
 </ViewObject>

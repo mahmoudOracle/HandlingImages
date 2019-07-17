@@ -26,6 +26,7 @@ import javax.servlet.http.*;
 
 import javax.sql.DataSource;
 
+import model.am.views.empAttach2Impl;
 import model.am.views.empAttachVOImpl;
 
 import oracle.jbo.ApplicationModule;
@@ -92,7 +93,7 @@ public class ImageServletHandlerDavidMason extends HttpServlet {
             if (vo == null) {
                 throw new Exception("empAttach2 not found!");
             }
-            empAttachVOImpl imageView = (empAttachVOImpl) vo;
+            empAttach2Impl imageView = (empAttach2Impl) vo;
 
             // get parameter from request
             Map paramMap = request.getParameterMap();

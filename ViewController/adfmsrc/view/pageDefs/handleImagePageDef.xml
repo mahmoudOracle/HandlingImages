@@ -5,7 +5,11 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="EmployeeAttachments1" RangeSize="25" DataControl="AppModuleAMDataControl"
-              id="EmployeeAttachments1Iterator"/>
+              id="EmployeeAttachments1Iterator">
+      <sortCriteria>
+        <sort attribute="AttachmentType" ascending="true"/>
+      </sortCriteria>
+    </iterator>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeeAttachments1Iterator" id="EmpAttachmentId">
@@ -57,5 +61,8 @@
         <Item Value="AttachedFile"/>
       </AttrNames>
     </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="AppModuleAMDataControl"/>
   </bindings>
 </pageDefinition>

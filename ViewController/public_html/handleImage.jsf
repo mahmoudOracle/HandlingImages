@@ -13,16 +13,7 @@
                 <af:gridRow height="100%" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <!-- Content -->
-                        <af:panelFormLayout id="pfl1">
-                            <af:inputText value="#{bindings.EmpAttachmentId.inputValue}"
-                                          label="#{bindings.EmpAttachmentId.hints.label}"
-                                          required="#{bindings.EmpAttachmentId.hints.mandatory}"
-                                          columns="#{bindings.EmpAttachmentId.hints.displayWidth}"
-                                          maximumLength="#{bindings.EmpAttachmentId.hints.precision}"
-                                          shortDesc="#{bindings.EmpAttachmentId.hints.tooltip}" id="it1">
-                                <f:validator binding="#{bindings.EmpAttachmentId.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpAttachmentId.format}"/>
-                            </af:inputText>
+                        <af:panelFormLayout id="pfl1" rows="8" maxColumns="2">
                             <af:inputText value="#{bindings.EmployeeId.inputValue}"
                                           label="#{bindings.EmployeeId.hints.label}"
                                           required="#{bindings.EmployeeId.hints.mandatory}"
@@ -31,6 +22,15 @@
                                           shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it2">
                                 <f:validator binding="#{bindings.EmployeeId.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.EmpAttachmentId.inputValue}"
+                                          label="#{bindings.EmpAttachmentId.hints.label}"
+                                          required="#{bindings.EmpAttachmentId.hints.mandatory}"
+                                          columns="#{bindings.EmpAttachmentId.hints.displayWidth}"
+                                          maximumLength="#{bindings.EmpAttachmentId.hints.precision}"
+                                          shortDesc="#{bindings.EmpAttachmentId.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.EmpAttachmentId.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpAttachmentId.format}"/>
                             </af:inputText>
                             <af:inputText value="#{bindings.AttachmentType.inputValue}"
                                           label="#{bindings.AttachmentType.hints.label}"
@@ -81,9 +81,18 @@
                                 <f:validator binding="#{bindings.Version.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.Version.format}"/>
                             </af:inputText>
-                            <af:inputFile label="Upload Image" id="if1"
-                                          valueChangeListener="#{imageBeanHandler.upoladImage}"
-                                          value="#{imageBeanHandler.imageFile}" autoSubmit="true"/>
+                            <af:panelGroupLayout id="pgl4">
+                                <af:inputFile label="Upload Image  David Mason" id="if1"
+                                              valueChangeListener="#{imageBeanHandler.upoladImage}"
+                                              value="#{imageBeanHandler.imageFile}" autoSubmit="true"
+                                              binding="#{imageBeanHandler.davidMasonInputFile}"/>
+                                <af:image id="i6" inlineStyle="border-style:solid; height:300px; width:300px;"
+                                          binding="#{imageBeanHandler.previewImage}"
+                                          source="/imageservlethandlerdavidmason?id=temp#{pageFlowScope.path}"
+                                          partialTriggers="if1" shortDesc="DavidMason Update Image"/>
+                                <af:button text="Upload Image to DB" id="b5"
+                                           actionListener="#{imageBeanHandler.uploadImageToDB}"/>
+                            </af:panelGroupLayout>
                             <af:panelGroupLayout id="pgl3" layout="horizontal">
                                 <af:image id="i1" shortDesc="Sameh"
                                           source="/imageservletsameh?id=#{bindings.EmpAttachmentId.inputValue}"
@@ -93,12 +102,18 @@
                                           shortDesc="Timo App Module"/>
                                 <af:image id="i3" inlineStyle="border-style:solid; height:300px; width:300px;"
                                           source="/imageservlettimo?id=#{bindings.EmpAttachmentId.inputValue}"
-                                          shortDesc="Timo App Module"/>
+                                          shortDesc="Timo"/>
                                 <af:image id="i5" inlineStyle="border-style:solid; height:300px; width:300px;"
-                                          binding="#{imageBeanHandler.previewImage}"
                                           source="/imageservlethandlerdavidmason?id=#{bindings.EmpAttachmentId.inputValue}"
-                                          partialTriggers="if1" shortDesc="DavidMason"/>
+                                          shortDesc="DavidMason"/>
                             </af:panelGroupLayout>
+                            <af:inputFile label="Input File TIMO" id="if2"
+                                          valueChangeListener="#{imageBeanHandler.uploadFileValueChangeEvent}"
+                                          autoSubmit="true"/>
+                            <af:button text="Download Timo" id="b8">
+                                <af:fileDownloadActionListener filename="#{bindings.EmployeeId.inputValue}"
+                                                               method="#{imageBeanHandler.downloadImageTIMO}"/>
+                            </af:button>
                             <f:facet name="footer">
                                 <af:panelGroupLayout layout="horizontal" id="pgl2">
                                     <af:button actionListener="#{bindings.First.execute}" text="First"
@@ -109,6 +124,12 @@
                                                disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
                                     <af:button actionListener="#{bindings.Last.execute}" text="Last"
                                                disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                               disabled="false" id="b6"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                               disabled="false" immediate="true" id="b7">
+                                        <af:resetActionListener/>
+                                    </af:button>
                                 </af:panelGroupLayout>
                             </f:facet>
                         </af:panelFormLayout>

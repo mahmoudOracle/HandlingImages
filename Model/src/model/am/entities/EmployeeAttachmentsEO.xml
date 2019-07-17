@@ -89,7 +89,8 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="EMPLOYEE_ATTACHMENTS"/>
+    TableName="EMPLOYEE_ATTACHMENTS"
+    HistoryColumn="VersionHistory"/>
   <AccessorAttribute
     Name="Employees"
     Association="model.am.associations.EmpAttachmentsFk1ASS"

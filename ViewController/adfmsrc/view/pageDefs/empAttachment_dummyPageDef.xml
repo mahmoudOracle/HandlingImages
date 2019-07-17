@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="dummyPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeeAttachments1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="EmployeeAttachments1Iterator">
+      <sortCriteria>
+        <sort attribute="AttachmentType" ascending="true"/>
+      </sortCriteria>
+    </iterator>
+  </executables>
+  <bindings>
+    <methodAction id="getAttachmentById" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getAttachmentById"
+                  IsViewObjectMethod="true" DataControl="HrAddEmpAppModuleDataControl"
+                  InstanceName="HrAddEmpAppModuleDataControl.EmpAttachments1"
+                  ReturnName="data.HrAddEmpAppModuleDataControl.methodResults.getAttachmentById_getAttachmentById_dataControl_EmpAttachments1_getAttachmentById_result">
+      <NamedData NDName="aId" NDType="oracle.jbo.domain.Number"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>
