@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobsEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="JOBS"
+  AliasName="JobsEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="JobId"
+    IsNotNull="true"
+    ColumnName="JOB_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="JOBS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="JobTitle"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="JOB_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobDescription"
+    IsNotNull="true"
+    Precision="500"
+    ColumnName="JOB_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobRoles"
+    IsQueriable="false"
+    ColumnName="JOB_ROLES"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="JOBS"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="JOBS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="JOBS"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="JOBS"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.EmployeesFk7ASS"
+    AssociationEnd="model.am.associations.EmployeesFk7ASS.Employees"
+    AssociationOtherEnd="model.am.associations.EmployeesFk7ASS.Jobs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="JobHistory"
+    Association="model.am.associations.JobHistoryFk1JobsASS"
+    AssociationEnd="model.am.associations.JobHistoryFk1JobsASS.JobHistory"
+    AssociationOtherEnd="model.am.associations.JobHistoryFk1JobsASS.Jobs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="JobsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="JOBS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.JobsEO.JobId"/>
+    </AttrArray>
+  </Key>
+</Entity>

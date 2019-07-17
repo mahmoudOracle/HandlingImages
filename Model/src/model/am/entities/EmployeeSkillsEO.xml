@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeSkillsEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="EMPLOYEE_SKILLS"
+  AliasName="EmployeeSkillsEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="EmployeeSkillId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_SKILL_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_SKILLS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_SKILLS"/>
+  <Attribute
+    Name="SkillId"
+    IsNotNull="true"
+    ColumnName="SKILL_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_SKILLS"/>
+  <Attribute
+    Name="SkillYears"
+    ColumnName="SKILL_YEARS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_SKILLS"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLOYEE_SKILLS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMPLOYEE_SKILLS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLOYEE_SKILLS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMPLOYEE_SKILLS"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_SKILLS"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.EmployeeSkillsFk1EmpsASS"
+    AssociationEnd="model.am.associations.EmployeeSkillsFk1EmpsASS.Employees"
+    AssociationOtherEnd="model.am.associations.EmployeeSkillsFk1EmpsASS.EmployeeSkills"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Skills"
+    Association="model.am.associations.EmployeeSkillsFk2SkillsASS"
+    AssociationEnd="model.am.associations.EmployeeSkillsFk2SkillsASS.Skills"
+    AssociationOtherEnd="model.am.associations.EmployeeSkillsFk2SkillsASS.EmployeeSkills"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmployeeSkillsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_SKILLS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmployeeSkillsEO.EmployeeSkillId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeSkillsFk1Emps">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_SKILLS_FK1_EMPS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmployeeSkillsEO.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeSkillsFk2Skills">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SKILLS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_SKILLS_FK2_SKILLS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmployeeSkillsEO.SkillId"/>
+    </AttrArray>
+  </Key>
+</Entity>

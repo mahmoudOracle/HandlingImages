@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ManagerLeaveDecisonEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="MANAGER_LEAVE_DECISON"
+  AliasName="ManagerLeaveDecisonEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="ManagerLeaveDecisonId"
+    IsNotNull="true"
+    ColumnName="MANAGER_LEAVE_DECISON_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmployeeLeaveRequestId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_LEAVE_REQUEST_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="DirectManagerId"
+    IsNotNull="true"
+    ColumnName="DIRECT_MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="DirectManagerDecision"
+    ColumnName="DIRECT_MANAGER_DECISION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="DirectManagerComments"
+    Precision="100"
+    ColumnName="DIRECT_MANAGER_COMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MANAGER_LEAVE_DECISON">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OperationManagerId"
+    IsNotNull="true"
+    ColumnName="OPERATION_MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="OperationManagerDecision"
+    ColumnName="OPERATION_MANAGER_DECISION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="OperationManagerComments"
+    Precision="100"
+    ColumnName="OPERATION_MANAGER_COMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MANAGER_LEAVE_DECISON">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AdminManagerId"
+    IsNotNull="true"
+    ColumnName="ADMIN_MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="AdminManagerDecision"
+    ColumnName="ADMIN_MANAGER_DECISION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="AdminManagerComments"
+    Precision="100"
+    ColumnName="ADMIN_MANAGER_COMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MANAGER_LEAVE_DECISON">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GeneralManagerId"
+    IsNotNull="true"
+    ColumnName="GENERAL_MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="GeneralManagerDecison"
+    ColumnName="GENERAL_MANAGER_DECISON"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="GeneralManagerComments"
+    Precision="20"
+    ColumnName="GENERAL_MANAGER_COMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MANAGER_LEAVE_DECISON">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MANAGER_LEAVE_DECISON">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MANAGER_LEAVE_DECISON">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MANAGER_LEAVE_DECISON"/>
+  <AccessorAttribute
+    Name="LeaveRequest"
+    Association="model.am.associations.EmployeeVacationApproveFk1ASS"
+    AssociationEnd="model.am.associations.EmployeeVacationApproveFk1ASS.LeaveRequest"
+    AssociationOtherEnd="model.am.associations.EmployeeVacationApproveFk1ASS.ManagerLeaveDecison"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.EmployeeVacStFk1EmployeesASS"
+    AssociationEnd="model.am.associations.EmployeeVacStFk1EmployeesASS.Employees"
+    AssociationOtherEnd="model.am.associations.EmployeeVacStFk1EmployeesASS.ManagerLeaveDecison"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees1"
+    Association="model.am.associations.EmployeeVacStFk2EmployeesASS"
+    AssociationEnd="model.am.associations.EmployeeVacStFk2EmployeesASS.Employees1"
+    AssociationOtherEnd="model.am.associations.EmployeeVacStFk2EmployeesASS.ManagerLeaveDecison1"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees2"
+    Association="model.am.associations.EmployeeVacStFk3EmployeesASS"
+    AssociationEnd="model.am.associations.EmployeeVacStFk3EmployeesASS.Employees2"
+    AssociationOtherEnd="model.am.associations.EmployeeVacStFk3EmployeesASS.ManagerLeaveDecison2"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees3"
+    Association="model.am.associations.EmployeeVacStFk4EmployeesASS"
+    AssociationEnd="model.am.associations.EmployeeVacStFk4EmployeesASS.Employees3"
+    AssociationOtherEnd="model.am.associations.EmployeeVacStFk4EmployeesASS.ManagerLeaveDecison3"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmployeeAnnualLeavePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_ANNUAL_LEAVE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ManagerLeaveDecisonEO.ManagerLeaveDecisonId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeVacStFk1Employees">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_VAC_ST_FK1_EMPLOYEES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ManagerLeaveDecisonEO.DirectManagerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeVacStFk2Employees">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_VAC_ST_FK2_EMPLOYEES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ManagerLeaveDecisonEO.OperationManagerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeVacStFk3Employees">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_VAC_ST_FK3_EMPLOYEES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ManagerLeaveDecisonEO.AdminManagerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeVacStFk4Employees">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_VAC_ST_FK4_EMPLOYEES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ManagerLeaveDecisonEO.GeneralManagerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeVacationApproveFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEE_LEAVE_TAKEN_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_VACATION_APPROVE_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ManagerLeaveDecisonEO.EmployeeLeaveRequestId"/>
+    </AttrArray>
+  </Key>
+</Entity>

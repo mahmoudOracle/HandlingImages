@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LocCIdFkASS"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="HrCountries"
+    Cardinality="1"
+    Source="true"
+    Owner="model.am.entities.HrCountriesEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="HrCountries"/>
+      <Attr Name="_foreignKey" Value="model.am.entities.HrCountriesEO.CountryCIdPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrCountriesEO.CountryId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="HrLocations"
+    Cardinality="-1"
+    Owner="model.am.entities.HrLocationsEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="HrLocations"/>
+      <Attr Name="_foreignKey" Value="model.am.entities.HrLocationsEO.LocCIdFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrLocationsEO.CountryId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DisciplinaryIncidentFilesEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DISCIPLINARY_INCIDENT_FILES"
+  AliasName="DisciplinaryIncidentFilesEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="IncidentFileId"
+    IsNotNull="true"
+    ColumnName="INCIDENT_FILE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT_FILES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DisciplinaryIncidentId"
+    IsNotNull="true"
+    ColumnName="DISCIPLINARY_INCIDENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT_FILES"/>
+  <Attribute
+    Name="ComplaintMemo"
+    IsQueriable="false"
+    ColumnName="COMPLAINT_MEMO"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="DISCIPLINARY_INCIDENT_FILES"/>
+  <Attribute
+    Name="Statment"
+    IsQueriable="false"
+    ColumnName="STATMENT"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="DISCIPLINARY_INCIDENT_FILES"/>
+  <Attribute
+    Name="CorrectiveActionDoc"
+    IsQueriable="false"
+    ColumnName="CORRECTIVE_ACTION_DOC"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="DISCIPLINARY_INCIDENT_FILES"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_INCIDENT_FILES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DISCIPLINARY_INCIDENT_FILES"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_INCIDENT_FILES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DISCIPLINARY_INCIDENT_FILES"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT_FILES"/>
+  <AccessorAttribute
+    Name="DisciplinaryIncident"
+    Association="model.am.associations.DisciplinaryIncidentFilFk1ASS"
+    AssociationEnd="model.am.associations.DisciplinaryIncidentFilFk1ASS.DisciplinaryIncident"
+    AssociationOtherEnd="model.am.associations.DisciplinaryIncidentFilFk1ASS.DisciplinaryIncidentFiles"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DisciplinaryIncidentFilePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_INCIDENT_FILE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryIncidentFilesEO.IncidentFileId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DisciplinaryIncidentFilFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DISCIPLINARY_INCIDENT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_INCIDENT_FIL_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryIncidentFilesEO.DisciplinaryIncidentId"/>
+    </AttrArray>
+  </Key>
+</Entity>

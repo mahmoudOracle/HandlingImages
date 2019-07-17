@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LeaveRequestEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="LEAVE_REQUEST"
+  AliasName="LeaveRequestEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="LeaveRequestId"
+    IsNotNull="true"
+    ColumnName="LEAVE_REQUEST_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LEAVE_REQUEST"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="LeaveTypesId"
+    IsNotNull="true"
+    ColumnName="LEAVE_TYPES_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="RequestDate"
+    IsNotNull="true"
+    ColumnName="REQUEST_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="LastDateOnJob"
+    IsNotNull="true"
+    ColumnName="LAST_DATE_ON_JOB"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="LeaveFromDate"
+    IsNotNull="true"
+    ColumnName="LEAVE_FROM_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="LeaveToDate"
+    IsNotNull="true"
+    ColumnName="LEAVE_TO_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="AdressIdDuringVacation"
+    IsNotNull="true"
+    ColumnName="ADRESS_ID_DURING_VACATION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="OtherDetails"
+    Precision="200"
+    ColumnName="OTHER_DETAILS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LEAVE_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RejoinDate"
+    IsNotNull="true"
+    ColumnName="REJOIN_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="RequestStatusId"
+    ColumnName="REQUEST_STATUS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="RequestStatusOmments"
+    Precision="300"
+    ColumnName="REQUEST_STATUS_OMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LEAVE_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LEAVE_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LEAVE_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="LEAVE_REQUEST"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LEAVE_REQUEST"/>
+  <AccessorAttribute
+    Name="EmployeeExitVisa"
+    Association="model.am.associations.EmployeeExitVisaFk1ASS"
+    AssociationEnd="model.am.associations.EmployeeExitVisaFk1ASS.EmployeeExitVisa"
+    AssociationOtherEnd="model.am.associations.EmployeeExitVisaFk1ASS.LeaveRequest"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EmployeeLeaveHistory"
+    Association="model.am.associations.EmployeeLeaveHistoryFk1ASS"
+    AssociationEnd="model.am.associations.EmployeeLeaveHistoryFk1ASS.EmployeeLeaveHistory"
+    AssociationOtherEnd="model.am.associations.EmployeeLeaveHistoryFk1ASS.LeaveRequest"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.EmployeeLeaveTakenFk1ASS"
+    AssociationEnd="model.am.associations.EmployeeLeaveTakenFk1ASS.Employees"
+    AssociationOtherEnd="model.am.associations.EmployeeLeaveTakenFk1ASS.LeaveRequest"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Address"
+    Association="model.am.associations.EmployeeVacationRequestFk1ASS"
+    AssociationEnd="model.am.associations.EmployeeVacationRequestFk1ASS.Address"
+    AssociationOtherEnd="model.am.associations.EmployeeVacationRequestFk1ASS.LeaveRequest"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ManagerLeaveDecison"
+    Association="model.am.associations.EmployeeVacationApproveFk1ASS"
+    AssociationEnd="model.am.associations.EmployeeVacationApproveFk1ASS.ManagerLeaveDecison"
+    AssociationOtherEnd="model.am.associations.EmployeeVacationApproveFk1ASS.LeaveRequest"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="EmployeeLeaveTakenPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_LEAVE_TAKEN_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.LeaveRequestEO.LeaveRequestId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeLeaveTakenFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_LEAVE_TAKEN_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.LeaveRequestEO.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeVacationRequestFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_VACATION_REQUEST_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.LeaveRequestEO.AdressIdDuringVacation"/>
+    </AttrArray>
+  </Key>
+</Entity>

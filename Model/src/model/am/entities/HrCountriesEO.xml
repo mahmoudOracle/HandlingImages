@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrCountriesEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HR_COUNTRIES"
+  AliasName="HrCountriesEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="CountryId"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="COUNTRY_ID"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="HR_COUNTRIES"
+    PrimaryKey="true"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CountryName"
+    Precision="40"
+    ColumnName="COUNTRY_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_COUNTRIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegionId"
+    ColumnName="REGION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR_COUNTRIES"/>
+  <AccessorAttribute
+    Name="HrLocations"
+    Association="model.am.associations.LocCIdFkASS"
+    AssociationEnd="model.am.associations.LocCIdFkASS.HrLocations"
+    AssociationOtherEnd="model.am.associations.LocCIdFkASS.HrCountries"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="HrRegions"
+    Association="model.am.associations.CountrRegFkASS"
+    AssociationEnd="model.am.associations.CountrRegFkASS.HrRegions"
+    AssociationOtherEnd="model.am.associations.CountrRegFkASS.HrCountries"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CountryCIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COUNTRY_C_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrCountriesEO.CountryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CountryIdNn">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value='"COUNTRY_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="COUNTRY_ID_NN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="CountrRegFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="REG_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="COUNTR_REG_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrCountriesEO.RegionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

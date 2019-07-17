@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BranchFk1SectorVL"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.am.associations.BranchFk1SectorASS">
+  <ViewLinkDefEnd
+    Name="Sector"
+    Cardinality="1"
+    Source="true"
+    Owner="model.am.views.SectorVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="Sector"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.SectorVO.SectorId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Branch"
+    Cardinality="-1"
+    Owner="model.am.views.BranchVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Branch"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.BranchVO.SectorId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="handleImage.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1" usesUpload="true">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.EmpAttachmentId.inputValue}"
+                                          label="#{bindings.EmpAttachmentId.hints.label}"
+                                          required="#{bindings.EmpAttachmentId.hints.mandatory}"
+                                          columns="#{bindings.EmpAttachmentId.hints.displayWidth}"
+                                          maximumLength="#{bindings.EmpAttachmentId.hints.precision}"
+                                          shortDesc="#{bindings.EmpAttachmentId.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.EmpAttachmentId.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpAttachmentId.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.EmployeeId.inputValue}"
+                                          label="#{bindings.EmployeeId.hints.label}"
+                                          required="#{bindings.EmployeeId.hints.mandatory}"
+                                          columns="#{bindings.EmployeeId.hints.displayWidth}"
+                                          maximumLength="#{bindings.EmployeeId.hints.precision}"
+                                          shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.EmployeeId.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.AttachmentType.inputValue}"
+                                          label="#{bindings.AttachmentType.hints.label}"
+                                          required="#{bindings.AttachmentType.hints.mandatory}"
+                                          columns="#{bindings.AttachmentType.hints.displayWidth}"
+                                          maximumLength="#{bindings.AttachmentType.hints.precision}"
+                                          shortDesc="#{bindings.AttachmentType.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.AttachmentType.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.AttachmentType.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CreatedBy.inputValue}"
+                                          label="#{bindings.CreatedBy.hints.label}"
+                                          required="#{bindings.CreatedBy.hints.mandatory}"
+                                          columns="#{bindings.CreatedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.CreatedBy.hints.precision}"
+                                          shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.CreatedOn.inputValue}"
+                                          label="#{bindings.CreatedOn.hints.label}"
+                                          required="#{bindings.CreatedOn.hints.mandatory}"
+                                          columns="#{bindings.CreatedOn.hints.displayWidth}"
+                                          shortDesc="#{bindings.CreatedOn.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.CreatedOn.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.CreatedOn.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.ModifiedBy.inputValue}"
+                                          label="#{bindings.ModifiedBy.hints.label}"
+                                          required="#{bindings.ModifiedBy.hints.mandatory}"
+                                          columns="#{bindings.ModifiedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.ModifiedBy.hints.precision}"
+                                          shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.ModifiedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.ModifiedOn.inputValue}"
+                                          label="#{bindings.ModifiedOn.hints.label}"
+                                          required="#{bindings.ModifiedOn.hints.mandatory}"
+                                          columns="#{bindings.ModifiedOn.hints.displayWidth}"
+                                          shortDesc="#{bindings.ModifiedOn.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.ModifiedOn.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ModifiedOn.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.Version.inputValue}" label="#{bindings.Version.hints.label}"
+                                          required="#{bindings.Version.hints.mandatory}"
+                                          columns="#{bindings.Version.hints.displayWidth}"
+                                          maximumLength="#{bindings.Version.hints.precision}"
+                                          shortDesc="#{bindings.Version.hints.tooltip}" id="it6">
+                                <f:validator binding="#{bindings.Version.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Version.format}"/>
+                            </af:inputText>
+                            <af:inputFile label="Upload Image" id="if1"
+                                          valueChangeListener="#{imageBeanHandler.upoladImage}"
+                                          value="#{imageBeanHandler.imageFile}" autoSubmit="true"/>
+                            <af:panelGroupLayout id="pgl3" layout="horizontal">
+                                <af:image id="i1" shortDesc="Sameh"
+                                          source="/imageservletsameh?id=#{bindings.EmpAttachmentId.inputValue}"
+                                          inlineStyle="border-style:solid; height:300px; width:300px;"/>
+                                <af:image id="i2" inlineStyle="border-style:solid; height:300px; width:300px;"
+                                          source="/imageservlettimoam?id=#{bindings.EmpAttachmentId.inputValue}"
+                                          shortDesc="Timo App Module"/>
+                                <af:image id="i3" inlineStyle="border-style:solid; height:300px; width:300px;"
+                                          source="/imageservlettimo?id=#{bindings.EmpAttachmentId.inputValue}"
+                                          shortDesc="Timo App Module"/>
+                                <af:image id="i5" inlineStyle="border-style:solid; height:300px; width:300px;"
+                                          binding="#{imageBeanHandler.previewImage}"
+                                          source="/imageservlethandlerdavidmason?id=#{bindings.EmpAttachmentId.inputValue}"
+                                          partialTriggers="if1" shortDesc="DavidMason"/>
+                            </af:panelGroupLayout>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

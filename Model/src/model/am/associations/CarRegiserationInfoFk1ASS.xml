@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CarRegiserationInfoFk1ASS"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Cars"
+    Cardinality="1"
+    Source="true"
+    Owner="model.am.entities.CarsEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Cars"/>
+      <Attr Name="_foreignKey" Value="model.am.entities.CarsEO.CarsPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.CarsEO.CarId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="CarRegiserationInfo"
+    Cardinality="-1"
+    Owner="model.am.entities.CarRegiserationInfoEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="CarRegiserationInfo"/>
+      <Attr Name="_foreignKey" Value="model.am.entities.CarRegiserationInfoEO.CarRegiserationInfoFk1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.CarRegiserationInfoEO.CarId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

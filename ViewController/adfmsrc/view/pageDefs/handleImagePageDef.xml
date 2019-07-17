@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="handleImagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeeAttachments1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="EmployeeAttachments1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="EmpAttachmentId">
+      <AttrNames>
+        <Item Value="EmpAttachmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="AttachmentType">
+      <AttrNames>
+        <Item Value="AttachmentType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmployeeAttachments1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="EmployeeAttachments1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="EmployeeAttachments1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="EmployeeAttachments1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="EmployeeAttachments1Iterator" id="AttachedFile">
+      <AttrNames>
+        <Item Value="AttachedFile"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

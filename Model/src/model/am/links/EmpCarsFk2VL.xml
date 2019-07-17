@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpCarsFk2VL"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.am.associations.EmpCarsFk2ASS">
+  <ViewLinkDefEnd
+    Name="Cars"
+    Cardinality="1"
+    Source="true"
+    Owner="model.am.views.CarsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Cars"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.CarsVO.CarId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmpCars"
+    Cardinality="-1"
+    Owner="model.am.views.EmpCarsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="EmpCars"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.EmpCarsVO.CarId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

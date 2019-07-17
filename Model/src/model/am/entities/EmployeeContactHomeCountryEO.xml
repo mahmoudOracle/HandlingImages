@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeContactHomeCountryEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="EMPLOYEE_CONTACT_HOME_COUNTRY"
+  AliasName="EmployeeContactHomeCountryEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="ContactHomeId"
+    IsNotNull="true"
+    ColumnName="CONTACT_HOME_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <Attribute
+    Name="FirstName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="FIRST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MiddleName"
+    Precision="20"
+    ColumnName="MIDDLE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastName"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="LAST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RelationId"
+    IsNotNull="true"
+    ColumnName="RELATION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <Attribute
+    Name="HomeNo"
+    ColumnName="HOME_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <Attribute
+    Name="MobileNo"
+    IsNotNull="true"
+    ColumnName="MOBILE_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <Attribute
+    Name="OfficeNo"
+    ColumnName="OFFICE_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_CONTACT_HOME_COUNTRY"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.EmployeeConHomeFk1EmplASS"
+    AssociationEnd="model.am.associations.EmployeeConHomeFk1EmplASS.Employees"
+    AssociationOtherEnd="model.am.associations.EmployeeConHomeFk1EmplASS.EmployeeContactHomeCountry"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ContactHomeIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CONTACT_HOME_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmployeeContactHomeCountryEO.ContactHomeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeConHomeFk1Empl">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_CON_HOME_FK1_EMPL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmployeeContactHomeCountryEO.EmployeeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

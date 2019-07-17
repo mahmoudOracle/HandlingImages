@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BranchEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="BRANCH"
+  AliasName="BranchEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="BranchId"
+    IsNotNull="true"
+    ColumnName="BRANCH_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BRANCH"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="BranchName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="BRANCH_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BRANCH">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BRANCH">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SectorId"
+    IsNotNull="true"
+    ColumnName="SECTOR_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BRANCH"/>
+  <Attribute
+    Name="BracnhManagerId"
+    IsNotNull="true"
+    ColumnName="BRACNH_MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BRANCH"/>
+  <Attribute
+    Name="AddressId"
+    IsNotNull="true"
+    ColumnName="ADDRESS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BRANCH"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BRANCH">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="BRANCH"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BRANCH">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="BRANCH"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BRANCH"/>
+  <AccessorAttribute
+    Name="Announcements"
+    Association="model.am.associations.AnnouncementsFk2ASS"
+    AssociationEnd="model.am.associations.AnnouncementsFk2ASS.Announcements"
+    AssociationOtherEnd="model.am.associations.AnnouncementsFk2ASS.Branch"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Address"
+    Association="model.am.associations.BranchFk1ASS"
+    AssociationEnd="model.am.associations.BranchFk1ASS.Address"
+    AssociationOtherEnd="model.am.associations.BranchFk1ASS.Branch"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="BranchCars"
+    Association="model.am.associations.BranchCarsFk1ASS"
+    AssociationEnd="model.am.associations.BranchCarsFk1ASS.BranchCars"
+    AssociationOtherEnd="model.am.associations.BranchCarsFk1ASS.Branch"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Departments"
+    Association="model.am.associations.DepartmentFk1BranchesASS"
+    AssociationEnd="model.am.associations.DepartmentFk1BranchesASS.Departments"
+    AssociationOtherEnd="model.am.associations.DepartmentFk1BranchesASS.Branch"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.BranchFk2EmployeesASS"
+    AssociationEnd="model.am.associations.BranchFk2EmployeesASS.Employees"
+    AssociationOtherEnd="model.am.associations.BranchFk2EmployeesASS.Branch"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Sector"
+    Association="model.am.associations.BranchFk1SectorASS"
+    AssociationEnd="model.am.associations.BranchFk1SectorASS.Sector"
+    AssociationOtherEnd="model.am.associations.BranchFk1SectorASS.Branch"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="BranchPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="BRANCH_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.BranchEO.BranchId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BranchFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BRANCH_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.BranchEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BranchFk1Sector">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SECTOR_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BRANCH_FK1_SECTOR"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.BranchEO.SectorId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BranchFk2Employees">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BRANCH_FK2_EMPLOYEES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.BranchEO.BracnhManagerId"/>
+    </AttrArray>
+  </Key>
+</Entity>

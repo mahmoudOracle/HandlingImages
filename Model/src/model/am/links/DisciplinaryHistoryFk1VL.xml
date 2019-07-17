@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DisciplinaryHistoryFk1VL"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.am.associations.DisciplinaryHistoryFk1ASS">
+  <ViewLinkDefEnd
+    Name="Employees"
+    Cardinality="1"
+    Source="true"
+    Owner="model.am.views.EmployeesVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="Employees"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.EmployeesVO.EmployeeId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DisciplinaryHistory1"
+    Cardinality="-1"
+    Owner="model.am.views.DisciplinaryHistoryVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DisciplinaryHistory1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.DisciplinaryHistoryVO.EmployeeMakeViolation"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AnnouncementsFk3ASS"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Sector"
+    Cardinality="1"
+    Source="true"
+    Owner="model.am.entities.SectorEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Sector"/>
+      <Attr Name="_foreignKey" Value="model.am.entities.SectorEO.SectorPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.SectorEO.SectorId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Announcements"
+    Cardinality="-1"
+    Owner="model.am.entities.AnnouncementsEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Announcements"/>
+      <Attr Name="_foreignKey" Value="model.am.entities.AnnouncementsEO.AnnouncementsFk3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.AnnouncementsEO.SectorId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

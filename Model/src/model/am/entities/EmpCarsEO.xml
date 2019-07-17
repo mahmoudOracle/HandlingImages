@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpCarsEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="EMP_CARS"
+  AliasName="EmpCarsEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="EmpCarId"
+    IsNotNull="true"
+    ColumnName="EMP_CAR_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_CARS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmpId"
+    ColumnName="EMP_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_CARS"/>
+  <Attribute
+    Name="CarId"
+    ColumnName="CAR_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_CARS"/>
+  <Attribute
+    Name="HaveTheCar"
+    Precision="20"
+    ColumnName="HAVE_THE_CAR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_CARS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    ColumnName="START_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_CARS"/>
+  <Attribute
+    Name="EndDate"
+    ColumnName="END_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_CARS"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_CARS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_CARS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_CARS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_CARS"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_CARS"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.EmpCarsFk1ASS"
+    AssociationEnd="model.am.associations.EmpCarsFk1ASS.Employees"
+    AssociationOtherEnd="model.am.associations.EmpCarsFk1ASS.EmpCars"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Cars"
+    Association="model.am.associations.EmpCarsFk2ASS"
+    AssociationEnd="model.am.associations.EmpCarsFk2ASS.Cars"
+    AssociationOtherEnd="model.am.associations.EmpCarsFk2ASS.EmpCars"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmpCarsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMP_CARS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmpCarsEO.EmpCarId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpCarsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMP_CARS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmpCarsEO.EmpId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpCarsFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CARS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMP_CARS_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmpCarsEO.CarId"/>
+    </AttrArray>
+  </Key>
+</Entity>

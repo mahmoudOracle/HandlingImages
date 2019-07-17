@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProjectsEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PROJECTS"
+  AliasName="ProjectsEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="ProjectId"
+    IsNotNull="true"
+    ColumnName="PROJECT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ProjectName"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="PROJECT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectDescription"
+    IsNotNull="true"
+    Precision="300"
+    ColumnName="PROJECT_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectStartDate"
+    IsNotNull="true"
+    ColumnName="PROJECT_START_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ProjectEndDate"
+    ColumnName="PROJECT_END_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="CompanyId"
+    IsNotNull="true"
+    ColumnName="COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Active"
+    IsNotNull="true"
+    ColumnName="ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ProjectMaangerId"
+    ColumnName="PROJECT_MAANGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="AddressId"
+    IsNotNull="true"
+    ColumnName="ADDRESS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <AccessorAttribute
+    Name="EmpProjects"
+    Association="model.am.associations.ProjectAdminFk1ASS"
+    AssociationEnd="model.am.associations.ProjectAdminFk1ASS.EmpProjects"
+    AssociationOtherEnd="model.am.associations.ProjectAdminFk1ASS.Projects"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerCompanies"
+    Association="model.am.associations.ProjectsFk1ASS"
+    AssociationEnd="model.am.associations.ProjectsFk1ASS.CustomerCompanies"
+    AssociationOtherEnd="model.am.associations.ProjectsFk1ASS.Projects"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.ProjectsFk2ASS"
+    AssociationEnd="model.am.associations.ProjectsFk2ASS.Employees"
+    AssociationOtherEnd="model.am.associations.ProjectsFk2ASS.Projects"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Address"
+    Association="model.am.associations.ProjectsFk3ASS"
+    AssociationEnd="model.am.associations.ProjectsFk3ASS.Address"
+    AssociationOtherEnd="model.am.associations.ProjectsFk3ASS.Projects"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ProjectsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PROJECTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ProjectsEO.ProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjectsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CUSTOMER_COMPANY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJECTS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ProjectsEO.CompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjectsFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJECTS_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ProjectsEO.ProjectMaangerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjectsFk3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJECTS_FK3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.ProjectsEO.AddressId"/>
+    </AttrArray>
+  </Key>
+</Entity>

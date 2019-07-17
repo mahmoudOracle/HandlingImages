@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeLeaveHistoryEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="EMPLOYEE_LEAVE_HISTORY"
+  AliasName="EmployeeLeaveHistoryEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="EmployeeLeaveHistoryId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_LEAVE_HISTORY_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_LEAVE_HISTORY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="LeaveRequestId"
+    ColumnName="LEAVE_REQUEST_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <Attribute
+    Name="AllowedDays"
+    ColumnName="ALLOWED_DAYS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <Attribute
+    Name="LeaveTakenDays"
+    ColumnName="LEAVE_TAKEN_DAYS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <Attribute
+    Name="ModifiedBy"
+    ColumnName="MODIFIED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMPLOYEE_LEAVE_HISTORY"/>
+  <AccessorAttribute
+    Name="LeaveRequest"
+    Association="model.am.associations.EmployeeLeaveHistoryFk1ASS"
+    AssociationEnd="model.am.associations.EmployeeLeaveHistoryFk1ASS.LeaveRequest"
+    AssociationOtherEnd="model.am.associations.EmployeeLeaveHistoryFk1ASS.EmployeeLeaveHistory"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmployeeLeaveHistoryPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_LEAVE_HISTORY_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmployeeLeaveHistoryEO.EmployeeLeaveHistoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeeLeaveHistoryFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEE_LEAVE_TAKEN_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_LEAVE_HISTORY_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.EmployeeLeaveHistoryEO.LeaveRequestId"/>
+    </AttrArray>
+  </Key>
+</Entity>

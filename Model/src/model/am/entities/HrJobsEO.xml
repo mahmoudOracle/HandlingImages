@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrJobsEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HR_JOBS"
+  AliasName="HrJobsEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="JobId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="JOB_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_JOBS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobTitle"
+    IsNotNull="true"
+    Precision="35"
+    ColumnName="JOB_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MinSalary"
+    Precision="6"
+    Scale="0"
+    ColumnName="MIN_SALARY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR_JOBS"/>
+  <Attribute
+    Name="MaxSalary"
+    Precision="6"
+    Scale="0"
+    ColumnName="MAX_SALARY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR_JOBS"/>
+  <AccessorAttribute
+    Name="HrEmployees"
+    Association="model.am.associations.EmpJobFkASS"
+    AssociationEnd="model.am.associations.EmpJobFkASS.HrEmployees"
+    AssociationOtherEnd="model.am.associations.EmpJobFkASS.HrJobs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="HrJobHistory"
+    Association="model.am.associations.JhistJobFkASS"
+    AssociationEnd="model.am.associations.JhistJobFkASS.HrJobHistory"
+    AssociationOtherEnd="model.am.associations.JhistJobFkASS.HrJobs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="JobIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="JOB_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrJobsEO.JobId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="JobTitleNn">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value='"JOB_TITLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="JOB_TITLE_NN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+</Entity>

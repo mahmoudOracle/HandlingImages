@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DependentFilesFk1DependentsVL"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.am.associations.DependentFilesFk1DependentsASS">
+  <ViewLinkDefEnd
+    Name="Dependents"
+    Cardinality="1"
+    Source="true"
+    Owner="model.am.views.DependentsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="Dependents"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.DependentsVO.DependentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DependentFiles"
+    Cardinality="-1"
+    Owner="model.am.views.DependentFilesVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DependentFiles"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.views.DependentFilesVO.DependentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

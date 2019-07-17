@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DisciplinaryIncidentEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DISCIPLINARY_INCIDENT"
+  AliasName="DisciplinaryIncidentEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="DisciplinaryIncidentId"
+    IsNotNull="true"
+    ColumnName="DISCIPLINARY_INCIDENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="IncidentRaisedBy"
+    IsNotNull="true"
+    ColumnName="INCIDENT_RAISED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <Attribute
+    Name="IncidentDate"
+    IsNotNull="true"
+    ColumnName="INCIDENT_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <Attribute
+    Name="ViolationDescription"
+    IsNotNull="true"
+    Precision="500"
+    ColumnName="VIOLATION_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_INCIDENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmployeeStatment"
+    Precision="300"
+    ColumnName="EMPLOYEE_STATMENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_INCIDENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Verdict"
+    IsNotNull="true"
+    ColumnName="VERDICT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <Attribute
+    Name="CorrectiveAction"
+    IsNotNull="true"
+    ColumnName="CORRECTIVE_ACTION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <Attribute
+    Name="CorrectiveActionText"
+    Precision="300"
+    ColumnName="CORRECTIVE_ACTION_TEXT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_INCIDENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IncidentStatus"
+    ColumnName="INCIDENT_STATUS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_INCIDENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_INCIDENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_INCIDENT"/>
+  <AccessorAttribute
+    Name="DisciplinaryHistory"
+    Association="model.am.associations.DisciplinaryHistoryFk3ASS"
+    AssociationEnd="model.am.associations.DisciplinaryHistoryFk3ASS.DisciplinaryHistory"
+    AssociationOtherEnd="model.am.associations.DisciplinaryHistoryFk3ASS.DisciplinaryIncident"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Customers"
+    Association="model.am.associations.DisciplinaryIncidentFk2ASS"
+    AssociationEnd="model.am.associations.DisciplinaryIncidentFk2ASS.Customers"
+    AssociationOtherEnd="model.am.associations.DisciplinaryIncidentFk2ASS.DisciplinaryIncident"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="DisciplinaryIncidentFiles"
+    Association="model.am.associations.DisciplinaryIncidentFilFk1ASS"
+    AssociationEnd="model.am.associations.DisciplinaryIncidentFilFk1ASS.DisciplinaryIncidentFiles"
+    AssociationOtherEnd="model.am.associations.DisciplinaryIncidentFilFk1ASS.DisciplinaryIncident"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.DisciplinaryIncidentFk1ASS"
+    AssociationEnd="model.am.associations.DisciplinaryIncidentFk1ASS.Employees"
+    AssociationOtherEnd="model.am.associations.DisciplinaryIncidentFk1ASS.DisciplinaryIncident"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DisciplinaryIncidentPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_INCIDENT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryIncidentEO.DisciplinaryIncidentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DisciplinaryIncidentFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_INCIDENT_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryIncidentEO.IncidentRaisedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DisciplinaryIncidentFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CUSTOMERS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_INCIDENT_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryIncidentEO.IncidentRaisedBy"/>
+    </AttrArray>
+  </Key>
+</Entity>

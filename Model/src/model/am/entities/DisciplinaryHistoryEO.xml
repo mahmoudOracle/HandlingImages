@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DisciplinaryHistoryEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DISCIPLINARY_HISTORY"
+  AliasName="DisciplinaryHistoryEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="DisciplinaryHistoryId"
+    IsNotNull="true"
+    ColumnName="DISCIPLINARY_HISTORY_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_HISTORY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DisciplinaryIncidentId"
+    IsNotNull="true"
+    ColumnName="DISCIPLINARY_INCIDENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_HISTORY"/>
+  <Attribute
+    Name="EmployeeMakeViolation"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_MAKE_VIOLATION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_HISTORY"/>
+  <Attribute
+    Name="HandledByEmpId"
+    IsNotNull="true"
+    ColumnName="HANDLED_BY_EMP_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_HISTORY"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DISCIPLINARY_HISTORY"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DISCIPLINARY_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DISCIPLINARY_HISTORY"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DISCIPLINARY_HISTORY"/>
+  <AccessorAttribute
+    Name="DisciplinaryIncident"
+    Association="model.am.associations.DisciplinaryHistoryFk3ASS"
+    AssociationEnd="model.am.associations.DisciplinaryHistoryFk3ASS.DisciplinaryIncident"
+    AssociationOtherEnd="model.am.associations.DisciplinaryHistoryFk3ASS.DisciplinaryHistory"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.DisciplinaryHistoryFk2ASS"
+    AssociationEnd="model.am.associations.DisciplinaryHistoryFk2ASS.Employees"
+    AssociationOtherEnd="model.am.associations.DisciplinaryHistoryFk2ASS.DisciplinaryHistory"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees1"
+    Association="model.am.associations.DisciplinaryHistoryFk1ASS"
+    AssociationEnd="model.am.associations.DisciplinaryHistoryFk1ASS.Employees1"
+    AssociationOtherEnd="model.am.associations.DisciplinaryHistoryFk1ASS.DisciplinaryHistory1"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DisciplinaryHistoryPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_HISTORY_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryHistoryEO.DisciplinaryHistoryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DisciplinaryHistoryFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_HISTORY_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryHistoryEO.EmployeeMakeViolation"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DisciplinaryHistoryFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_HISTORY_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryHistoryEO.HandledByEmpId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DisciplinaryHistoryFk3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DISCIPLINARY_INCIDENT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DISCIPLINARY_HISTORY_FK3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.DisciplinaryHistoryEO.DisciplinaryIncidentId"/>
+    </AttrArray>
+  </Key>
+</Entity>

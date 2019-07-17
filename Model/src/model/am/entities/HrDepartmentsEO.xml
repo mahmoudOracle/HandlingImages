@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HrDepartmentsEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="HR_DEPARTMENTS"
+  AliasName="HrDepartmentsEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    Precision="4"
+    Scale="0"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR_DEPARTMENTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR_DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ManagerId"
+    Precision="6"
+    Scale="0"
+    ColumnName="MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR_DEPARTMENTS"/>
+  <Attribute
+    Name="LocationId"
+    Precision="4"
+    Scale="0"
+    ColumnName="LOCATION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR_DEPARTMENTS"/>
+  <AccessorAttribute
+    Name="HrEmployees"
+    Association="model.am.associations.DeptMgrFkASS"
+    AssociationEnd="model.am.associations.DeptMgrFkASS.HrEmployees"
+    AssociationOtherEnd="model.am.associations.DeptMgrFkASS.HrDepartments"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="HrEmployees1"
+    Association="model.am.associations.EmpDeptFkASS"
+    AssociationEnd="model.am.associations.EmpDeptFkASS.HrEmployees1"
+    AssociationOtherEnd="model.am.associations.EmpDeptFkASS.HrDepartments1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="HrJobHistory"
+    Association="model.am.associations.JhistDeptFkASS"
+    AssociationEnd="model.am.associations.JhistDeptFkASS.HrJobHistory"
+    AssociationOtherEnd="model.am.associations.JhistDeptFkASS.HrDepartments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="HrLocations"
+    Association="model.am.associations.DeptLocFkASS"
+    AssociationEnd="model.am.associations.DeptLocFkASS.HrLocations"
+    AssociationOtherEnd="model.am.associations.DeptLocFkASS.HrDepartments"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DeptIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DEPT_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrDepartmentsEO.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DeptNameNn">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value='"DEPARTMENT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPT_NAME_NN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="DeptLocFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LOC_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPT_LOC_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrDepartmentsEO.LocationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DeptMgrFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMP_EMP_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPT_MGR_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.HrDepartmentsEO.ManagerId"/>
+    </AttrArray>
+  </Key>
+</Entity>

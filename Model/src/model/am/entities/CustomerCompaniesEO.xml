@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerCompaniesEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CUSTOMER_COMPANIES"
+  AliasName="CustomerCompaniesEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="CustomerCompanyId"
+    IsNotNull="true"
+    ColumnName="CUSTOMER_COMPANY_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_COMPANIES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CompanyName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="COMPANY_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_COMPANIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    ColumnName="PHONE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_COMPANIES"/>
+  <Attribute
+    Name="RegisterationWithComDate"
+    ColumnName="REGISTERATION_WITH_COM_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CUSTOMER_COMPANIES"/>
+  <Attribute
+    Name="RepresentativeId"
+    ColumnName="REPRESENTATIVE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_COMPANIES"/>
+  <Attribute
+    Name="AddressId"
+    IsNotNull="true"
+    ColumnName="ADDRESS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_COMPANIES"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_COMPANIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CUSTOMER_COMPANIES"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_COMPANIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CUSTOMER_COMPANIES"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_COMPANIES"/>
+  <AccessorAttribute
+    Name="CompaniesContactPersons"
+    Association="model.am.associations.CompaniesContactPersonsFk1ASS"
+    AssociationEnd="model.am.associations.CompaniesContactPersonsFk1ASS.CompaniesContactPersons"
+    AssociationOtherEnd="model.am.associations.CompaniesContactPersonsFk1ASS.CustomerCompanies"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Address"
+    Association="model.am.associations.CustomerCompaniesFk1ASS"
+    AssociationEnd="model.am.associations.CustomerCompaniesFk1ASS.Address"
+    AssociationOtherEnd="model.am.associations.CustomerCompaniesFk1ASS.CustomerCompanies"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.CustomerCompanyFk1ASS"
+    AssociationEnd="model.am.associations.CustomerCompanyFk1ASS.Employees"
+    AssociationOtherEnd="model.am.associations.CustomerCompanyFk1ASS.CustomerCompanies"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Projects"
+    Association="model.am.associations.ProjectsFk1ASS"
+    AssociationEnd="model.am.associations.ProjectsFk1ASS.Projects"
+    AssociationOtherEnd="model.am.associations.ProjectsFk1ASS.CustomerCompanies"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CustomerCompanyPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CUSTOMER_COMPANY_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.CustomerCompaniesEO.CustomerCompanyId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CustomerCompaniesFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ADDRESS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CUSTOMER_COMPANIES_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.CustomerCompaniesEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CustomerCompanyFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CUSTOMER_COMPANY_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.CustomerCompaniesEO.RepresentativeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

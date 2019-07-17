@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NationalIqamaIdEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="NATIONAL_IQAMA_ID"
+  AliasName="NationalIqamaIdEO"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl">
+  <Attribute
+    Name="NationalidIqamaInfo"
+    IsNotNull="true"
+    ColumnName="NATIONALID_IQAMA_INFO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="NATIONAL_IQAMA_ID"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="NATIONAL_IQAMA_ID"/>
+  <Attribute
+    Name="IdNo"
+    IsNotNull="true"
+    ColumnName="ID_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="NATIONAL_IQAMA_ID"/>
+  <Attribute
+    Name="IssueDate"
+    IsNotNull="true"
+    ColumnName="ISSUE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="NATIONAL_IQAMA_ID"/>
+  <Attribute
+    Name="ExpirationDate"
+    IsNotNull="true"
+    ColumnName="EXPIRATION_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="NATIONAL_IQAMA_ID"/>
+  <Attribute
+    Name="IssuePlace"
+    Precision="30"
+    ColumnName="ISSUE_PLACE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NATIONAL_IQAMA_ID">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NATIONAL_IQAMA_ID">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="NATIONAL_IQAMA_ID"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="NATIONAL_IQAMA_ID">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="NATIONAL_IQAMA_ID"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="NATIONAL_IQAMA_ID"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.am.associations.NationalidIqamaFk1EmployeeASS"
+    AssociationEnd="model.am.associations.NationalidIqamaFk1EmployeeASS.Employees"
+    AssociationOtherEnd="model.am.associations.NationalidIqamaFk1EmployeeASS.NationalIqamaId"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="IqamaNationalidInfoPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="IQAMA_NATIONALID_INFO_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.NationalIqamaIdEO.NationalidIqamaInfo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="NationalidIqamaFk1Employee">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="NATIONALID_IQAMA_FK1_EMPLOYEE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.am.entities.NationalIqamaIdEO.EmployeeId"/>
+    </AttrArray>
+  </Key>
+</Entity>
